@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "npx pbiviz start"
+  },
+  "devDependencies": {
+    "powerbi-visuals-tools": "^7.0.2"
+  }
+}
