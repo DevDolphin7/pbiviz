@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-        "allowJs": true,
+        "jsx": "react-jsx",
+        "types": ["react", "react-dom"],
+        "allowJs": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "target": "es2022",
@@ -11,8 +13,7 @@
         "lib": [
             "es2022",
             "dom"
-        ],
-        "jsx": "react-jsx"
+        ]
     },
     "files": [
         "./src/visual.ts"

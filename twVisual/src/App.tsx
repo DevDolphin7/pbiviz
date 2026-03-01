@@ -7,11 +7,11 @@ export function App() {
         display: "grid",
         placeItems: "center",
         height: "100vh",
-        fontSize: "24px",
-        color: "blue",
+        // fontSize: "24px",
+        // color: "blue",
       }}
     >
-      Hello, world!
+      <p>Hello, world!</p>
     </div>
   );
 }
