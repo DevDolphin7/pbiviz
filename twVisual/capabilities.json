@@ -1,22 +1,45 @@
 {
     "dataRoles": [
         {
-            "displayName": "Measure Data",
-            "name": "measure",
-            "kind": "Measure"
+            "displayName": "BC Title",
+            "name": "title",
+            "kind": "Grouping",
+            "requiredTypes": [{ "text": true }]
+        },
+        {
+            "displayName": "BC Start Date",
+            "name": "bcStart",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "BC Submit Date",
+            "name": "bcSubmit",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "ITSC Date",
+            "name": "itscDate",
+            "kind": "Grouping"
         }
     ],
     "objects": {},
     "dataViewMappings": [
         {
+            "categorical": {
+                "categories": {"for": {"in": "title"}},
+                "values": {"select": [
+                    {"for": {"in": "bcStart"}},
+                    {"for": {"in": "bcSubmit"}},
+                    {"for": {"in": "itscDate"}}
+                ]}
+                
+            },
             "conditions": [{
-                "measure": {
-                    "max": 2
-                }
-            }],
-        "single": {
-            "role": "measure"
-        }
+                "title": {"max": 1},
+                "bcStart": {"max": 1},
+                "bcSubmit": {"max": 1},
+                "itscDate": {"max": 1}
+            }]
         }
     ],
     "privileges": []

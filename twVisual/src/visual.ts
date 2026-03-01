@@ -51,7 +51,7 @@ export class Visual implements IVisual {
   constructor(options: VisualConstructorOptions) {
     this.root = options.element;
     this.reactRoot = ReactDOM.createRoot(this.root);
-    this.reactRoot?.render(React.createElement(App));
+    // this.reactRoot?.render(React.createElement(App));
     //     console.log("Visual constructor", options);
     //     this.formattingSettingsService = new FormattingSettingsService();
     //     this.target = options.element;
@@ -68,7 +68,12 @@ export class Visual implements IVisual {
   }
 
   public update(options: VisualUpdateOptions) {
-    console.log("Visual update", options);
+    const dataView = options.dataViews && options.dataViews[0];
+    // const items = dataView ? dataView.categorical : {};
+    const items = dataView.categorical;
+
+    // ReactDOM.render(<App items=options.dataViews />)
+    this.reactRoot?.render(React.createElement(App, items));
     //     this.reactRoot?.render(React.createElement(App));
     //     this.formattingSettings =
     //       this.formattingSettingsService.populateFormattingSettingsModel(

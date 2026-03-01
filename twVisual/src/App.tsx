@@ -1,17 +1,12 @@
 // import * as React from "react";
+import "../style/App";
 
-export function App() {
+export function App(items: powerbi.DataViewCategorical) {
+  console.log("App items", items);
   return (
-    <div
-      style={{
-        display: "grid",
-        placeItems: "center",
-        height: "100vh",
-        // fontSize: "24px",
-        // color: "blue",
-      }}
-    >
+    <div>
       <p>Hello, world!</p>
+      <p>{JSON.stringify(items.categories)}</p>
     </div>
   );
 }
