@@ -26,13 +26,16 @@
     "dataViewMappings": [
         {
             "categorical": {
-                "categories": {"for": {"in": "title"}},
-                "values": {"select": [
+                "categories": {
+                    "select": [
+                    {"for": {"in": "title"}},
                     {"for": {"in": "bcStart"}},
                     {"for": {"in": "bcSubmit"}},
                     {"for": {"in": "itscDate"}}
+            ]},
+                "values": {"select": [
+                    {"for": {"in": "title"}}
                 ]}
-                
             },
             "conditions": [{
                 "title": {"max": 1},

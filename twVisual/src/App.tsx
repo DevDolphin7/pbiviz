@@ -6,7 +6,7 @@ export function App(items: powerbi.DataViewCategorical) {
   return (
     <div>
       <p>Hello, world!</p>
-      <p>{JSON.stringify(items.categories)}</p>
+      <p>{JSON.stringify(items.categories[1].values)}</p>
     </div>
   );
 }
